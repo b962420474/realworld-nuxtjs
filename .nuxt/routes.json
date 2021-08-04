@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/",
+    "component": "D:\\\\laragon\\\\www\\\\lagou\\\\lagou-e-task\\\\part3\\\\fed-e-task-03-03\\\\realworld-nuxtjs\\\\pages\\\\layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\lagou-e-task\\\\part3\\\\fed-e-task-03-03\\\\realworld-nuxtjs\\\\pages\\\\home",
+        "_name": "_1f84cebc"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\lagou-e-task\\\\part3\\\\fed-e-task-03-03\\\\realworld-nuxtjs\\\\pages\\\\login",
+        "_name": "_17adc406"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\lagou-e-task\\\\part3\\\\fed-e-task-03-03\\\\realworld-nuxtjs\\\\pages\\\\login",
+        "_name": "_17adc406"
+      }
+    ],
+    "_name": "_45648ba6"
+  }
+]
