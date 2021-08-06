@@ -6,31 +6,36 @@
         <ul class="nav navbar-nav pull-xs-right">
           <li class="nav-item">
             <!-- Add "active" class when you're on that page" -->
-            <nuxt-link class="nav-link active" to="/">Home</nuxt-link>
+            <nuxt-link class="nav-link" to="/" exact>Home</nuxt-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="user">
             <nuxt-link class="nav-link" to="/editor">
               <i class="ion-compose"></i>&nbsp;New Post
             </nuxt-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="user">
             <nuxt-link class="nav-link" to="/settings">
               <i class="ion-gear-a"></i>&nbsp;Settings
             </nuxt-link>
           </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/profile/lpz">
+          <li class="nav-item" v-if="user">
+            <nuxt-link class="nav-link" :to="{
+              name:'profile',
+              params: {
+                  username: user.username
+                }
+            }">
               <img
                 class="user-pic"
-                src="http://toutiao.meiduo.site/FtNcS8sKFSYQbtBbd40eFTL6lAs_"
+                :src="user.image"
               />
-              LPZ
+              {{user.username}}
             </nuxt-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="!user">
             <nuxt-link class="nav-link" to="/login">Sign in</nuxt-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="!user">
             <nuxt-link class="nav-link" to="/register">Sign up</nuxt-link>
           </li>
         </ul>
@@ -49,7 +54,11 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
-  name: "LayoutIndex"
+  name: "LayoutIndex",
+  computed:{
+    ...mapState(['user'])
+  }
 };
 </script>

@@ -12,7 +12,9 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cookieparser": "^0.1.0",
+    "dayjs": "^1.10.6",
     "js-cookie": "^3.0.0",
+    "markdown-it": "^12.2.0",
     "nuxt": "^2.15.7"
   }
 }

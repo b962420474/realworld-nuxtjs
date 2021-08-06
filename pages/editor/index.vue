@@ -32,6 +32,8 @@
 </template>
 <script>
 export default {
+  //在路由匹配渲染视图之前先处理中间件
+  middleware:'authenticated',
   name: "editorIndex"
 };
 </script>

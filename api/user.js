@@ -1,4 +1,4 @@
-import request from '@/utils/request.js'
+import {request} from '@/plugins/request.js'
 
 export const login = function (data) {
     return request({
@@ -12,5 +12,17 @@ export const register = function (data) {
         method: 'POST',
         url: '/api/users',
         data
+    })
+}
+export const followUser = function (username) {
+    return request({
+        method: 'POST',
+        url: `/api/profiles/${username}/follow`,
+    })
+}
+export const unFollowUser = function (username) {
+    return request({
+        method: 'DELETE',
+        url: `/api/profiles/${username}/follow`,
     })
 }

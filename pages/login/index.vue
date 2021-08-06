@@ -9,19 +9,37 @@
             <nuxt-link v-else to="/login">Have an account?</nuxt-link>
           </p>
           <ul class="error-messages">
-              <template v-for="(item,key) in errors">
-                  <li v-for="(data,index) in item" :key="index">{{key}} {{data}}</li>
-              </template>
+            <template v-for="(item,key) in errors">
+              <li v-for="(data,index) in item" :key="index">{{key}} {{data}}</li>
+            </template>
           </ul>
           <form @submit.prevent="submit">
             <fieldset class="form-group" v-if="!isLogin">
-              <input v-model="user.username" class="form-control form-control-lg" type="text" placeholder="Your Name" required/>
+              <input
+                v-model="user.username"
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Your Name"
+                required
+              />
             </fieldset>
             <fieldset class="form-group">
-              <input v-model="user.email" class="form-control form-control-lg" type="email" placeholder="Email" required/>
+              <input
+                v-model="user.email"
+                class="form-control form-control-lg"
+                type="email"
+                placeholder="Email"
+                required
+              />
             </fieldset>
             <fieldset class="form-group">
-              <input v-model="user.password" class="form-control form-control-lg" type="password" placeholder="Password" minlength="8"/>
+              <input
+                v-model="user.password"
+                class="form-control form-control-lg"
+                type="password"
+                placeholder="Password"
+                minlength="8"
+              />
             </fieldset>
             <button class="btn btn-lg btn-primary pull-xs-right">{{isLogin? "Sign in":"Sign sup"}}</button>
           </form>
@@ -31,40 +49,41 @@
   </div>
 </template>
 <script>
-import {login, register} from '@/api/user.js'
-import {mapMutations} from 'vuex'
-const Cookie = process.client ? require('js-cookie') : undefined
+import { login, register } from "@/api/user.js";
+import { mapMutations } from "vuex";
+const Cookies = process.client ? require("js-cookie") : undefined;
 export default {
   name: "loginIndex",
-  data () {
-      return {
-          user: {
-              username: '',
-              email: '',
-              password: '',
-          },
-          errors:''
-      }
+  middleware: "notAuthenticated",
+  data() {
+    return {
+      user: {
+        username: "",
+        email: "",
+        password: ""
+      },
+      errors: ""
+    };
   },
   computed: {
-    ...mapMutations(['setUser']),
-      isLogin () {
-          return this.$route.name === 'login'
-      }
+    isLogin() {
+      return this.$route.name === "login";
+    }
   },
   methods: {
-      async submit () {
-        try {
-            const {data} = this.isLogin? await login({user:this.user}): await register({user:this.user})
-            const {user} = data
-            this.setUser(user)
-            Cookie.set('user',user)
-            this.$router.push('/')
-        } catch (error) {
-          console.log(error)
-            this.errors = error.response.data.errors
-        }
+    ...mapMutations(["setUser"]),
+    async submit() {
+      try {
+        const { data } = this.isLogin
+          ? await login({ user: this.user })
+          : await register({ user: this.user });
+        this.setUser(data.user);
+        Cookies.set("user", JSON.stringify(data.user));
+        this.$router.push("/");
+      } catch (error) {
+        this.errors = error.response.data.errors;
       }
+    }
   }
 };
 </script>

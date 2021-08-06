@@ -4,9 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _45648ba6 = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
-const _1f84cebc = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
-const _17adc406 = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
+const _2dcacc9c = () => interopDefault(import('..\\pages\\layout' /* webpackChunkName: "" */))
+const _1e569567 = () => interopDefault(import('..\\pages\\home' /* webpackChunkName: "" */))
+const _a697403e = () => interopDefault(import('..\\pages\\login' /* webpackChunkName: "" */))
+const _2a42bc21 = () => interopDefault(import('..\\pages\\profile' /* webpackChunkName: "" */))
+const _45688016 = () => interopDefault(import('..\\pages\\editor' /* webpackChunkName: "" */))
+const _a1564eaa = () => interopDefault(import('..\\pages\\settings' /* webpackChunkName: "" */))
+const _110cff6e = () => interopDefault(import('..\\pages\\article' /* webpackChunkName: "" */))
 
 const emptyFn = () => {}
 
@@ -15,25 +19,41 @@ Vue.use(Router)
 export const routerOptions = {
   mode: 'history',
   base: '/',
-  linkActiveClass: 'nuxt-link-active',
+  linkActiveClass: 'active',
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
   routes: [{
     path: "/",
-    component: _45648ba6,
+    component: _2dcacc9c,
     children: [{
       path: "",
-      component: _1f84cebc,
+      component: _1e569567,
       name: "home"
     }, {
       path: "/register",
-      component: _17adc406,
+      component: _a697403e,
       name: "register"
     }, {
       path: "/login",
-      component: _17adc406,
+      component: _a697403e,
       name: "login"
+    }, {
+      path: "/profile/:username",
+      component: _2a42bc21,
+      name: "profile"
+    }, {
+      path: "/editor",
+      component: _45688016,
+      name: "editor"
+    }, {
+      path: "/settings",
+      component: _a1564eaa,
+      name: "settings"
+    }, {
+      path: "/article/:slug",
+      component: _110cff6e,
+      name: "article"
     }]
   }],
 

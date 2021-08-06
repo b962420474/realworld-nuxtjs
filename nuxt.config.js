@@ -3,6 +3,7 @@
  */
 module.exports = {
   router: {
+    linkActiveClass: 'active',
     extendRoutes(routes, resolve) {
       routes.splice(0)
       routes.push(
@@ -25,9 +26,34 @@ module.exports = {
               name: 'login',
               component: resolve(__dirname, 'pages/login/')
             },
+            {
+              path: '/profile/:username',
+              name: 'profile',
+              component: resolve(__dirname, 'pages/profile/')
+            },
+            {
+              path: '/editor',
+              name: 'editor',
+              component: resolve(__dirname, 'pages/editor/')
+            },
+            {
+              path: '/settings',
+              name: 'settings',
+              component: resolve(__dirname, 'pages/settings/')
+            },
+            {
+              path: '/article/:slug',
+              name: 'article',
+              component: resolve(__dirname, 'pages/article/')
+            },
           ]
         }]
       )
     }
-  }
+  },
+   // 注册插件
+   plugins: [
+    '~/plugins/request.js',
+    '~/plugins/dayjs.js'
+  ]
 }
