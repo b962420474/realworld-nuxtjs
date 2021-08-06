@@ -6,46 +6,43 @@
       {
         "path": "",
         "name": "home",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\home",
-        "_name": "_1e569567"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\home"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login",
-        "_name": "_a697403e"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login",
-        "_name": "_a697403e"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\login"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\profile",
-        "_name": "_2a42bc21"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\profile"
+      },
+      {
+        "path": "/editor/:slug",
+        "name": "editorArticle",
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\editor"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\editor",
-        "_name": "_45688016"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\editor"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\settings",
-        "_name": "_a1564eaa"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\settings"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\article",
-        "_name": "_110cff6e"
+        "component": "D:\\\\laragon\\\\www\\\\lagou\\\\realworld-nuxtjs\\\\pages\\\\article"
       }
-    ],
-    "_name": "_2dcacc9c"
+    ]
   }
 ]

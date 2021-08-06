@@ -43,6 +43,10 @@ export const routerOptions = {
       component: _2a42bc21,
       name: "profile"
     }, {
+      path: "/editor/:slug",
+      component: _45688016,
+      name: "editorArticle"
+    }, {
       path: "/editor",
       component: _45688016,
       name: "editor"

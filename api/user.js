@@ -26,3 +26,11 @@ export const unFollowUser = function (username) {
         url: `/api/profiles/${username}/follow`,
     })
 }
+
+export const updateUser = function (data) {
+    return request({
+        method: 'PUT',
+        url: `/api/user`,
+        data
+    })
+}

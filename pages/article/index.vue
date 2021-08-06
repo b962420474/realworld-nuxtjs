@@ -69,9 +69,9 @@ export default {
     },
     async onFollow() {
       this.article.followDisabled = true;
-      const follow = this.article.following ? unFollowUser : followUser;
-      await follow(this.article.author.username);
-      this.article.following = !this.article.following;
+      const follow = this.article.author.following ? unFollowUser : followUser;
+      const {data} = await follow(this.article.author.username);
+      this.article.author.following = data.profile.following;
       this.article.followDisabled = false;
     }
   }
