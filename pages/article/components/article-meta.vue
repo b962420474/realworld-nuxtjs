@@ -87,17 +87,17 @@ export default {
   },
   methods: {
     onFavorite() {
-      if(!this.user){
-        this.$router.push('/login')
-        return
-      }
+      // if(!this.user){
+      //   this.$router.push('/login')
+      //   return
+      // }
       this.$emit("onFavorite");
     },
     onFollow() {
-      if(!this.user){
-        this.$router.push('/login')
-        return
-      }
+      // if(!this.user){
+      //   this.$router.push('/login')
+      //   return
+      // }
       this.$emit("onFollow");
     },
     async remove(){

@@ -34,3 +34,9 @@ export const updateUser = function (data) {
         data
     })
 }
+export const getUser = function (username) {
+    return request({
+        method: 'GET',
+        url: `/api/profiles/${username}`
+    })
+}
