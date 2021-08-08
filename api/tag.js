@@ -6,7 +6,6 @@ import {request} from '@/plugins/request.js'
  * @returns 
  */
 export const getTags = function (params) {
-    return Promise.resolve({data:{tags:[]}})
     return request({
         method: 'get',
         url: '/api/tags'
