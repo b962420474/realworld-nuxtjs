@@ -111,8 +111,7 @@
               <span>Read more...</span>
             </nuxt-link>
           </div>
-        </div>
-        <nav>
+          <nav>
           <ul class="pagination">
             <li
               class="page-item ng-scope"
@@ -136,6 +135,8 @@
             </li>
           </ul>
         </nav>
+        </div>
+        
         <div class="col-md-3">
           <div class="sidebar">
             <p>Popular Tags</p>
